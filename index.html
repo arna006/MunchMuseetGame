@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>Grand Munch Heist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+  </head>
+  <body>
+    <input type="checkbox" id="musicToggle">
+    <div class="redFlash" id="red-Flash"></div>
+    <div class="endScreen">
+      <p id="finalText">Game Over!</p>
+      <ul id="finalScore">
+      </ul>
+      <form action="/lobby.html">
+        <button id="startGame">Play Again</button>
+    </form>
+    </div>
+    <div class="game-container viewport">
+      <img src="/images/escapeCar.png" id="escape-car"alt="">
+    </div>
+    <table id="scoreboard">
+      <thead>
+        <tr>
+          <th>Scoreboard</th>
+        </tr>
+      </thead>
+      <tbody id="scoreboard-body"></tbody>
+    </table>
+    </div>
+    <div class="player-info">
+      <div>
+        <label for="player-name">Your Name</label>
+        <input id="player-name" maxlength="10" type="text" />
+      </div>
+      <div>
+        <button id="player-color">Change Skin</button>
+      </div>
+      <div>
+        <label id="collected-paintings">Stolen Paintings: 0</label>
+      </div>
+      <div>
+        <label id="powerup-cooldown">Powerup is ready!</label>
+      </div>
+      <div>
+        <label id="errorMsg"></label>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script>
+      // NOTE - INCLUDE YOUR FIREBASE CONFIG HERE FOR ANYTHING TO WORK:
+      const firebaseConfig = {
+        apiKey: "AIzaSyDHXdQ4iW7T2TItWXqOZC0-jJwDY6_ghLE",
+        authDomain: "munchheist.firebaseapp.com",
+        databaseURL: "https://munchheist-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "munchheist",
+        storageBucket: "munchheist.appspot.com",
+        messagingSenderId: "196548992192",
+        appId: "1:196548992192:web:4244e94ae9469a2a2e2125"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+
+    <script src="/KeyPressListener.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
